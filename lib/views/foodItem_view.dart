@@ -5,7 +5,7 @@ import 'package:untitled/utils/constants.dart';
 import 'package:flutter/services.dart';
 import 'package:untitled/views/cartView.dart';
 
-import '../Controllers/itemsUpdate.dart';
+import '../Controllers/itemsController.dart';
 
 class FoodItemsView extends StatefulWidget {
   static const String routeName='/fooditems';
@@ -17,6 +17,7 @@ class _FoodItemsViewState extends State<FoodItemsView>{
   late final json=<Map<String,dynamic>>[
     {
       'day':"Monday (10-12-2025)",
+
       'data':[
         {
           'img':Constants.imagepath+"rice.png",
@@ -24,8 +25,9 @@ class _FoodItemsViewState extends State<FoodItemsView>{
           'desc':"Khichidi desc",
           'price':100,
           'color':"009951",
-          'i':0,
-          'j':0,
+          'addedBit':0,
+          'ind':1,
+          'oind':0,
         },
         {
           'img':Constants.imagepath+"c.png",
@@ -33,16 +35,18 @@ class _FoodItemsViewState extends State<FoodItemsView>{
           'desc':"Khichidi desc",
           'price':50,
           'color':"009951",
-          'i':0,
-          'j':1,
+          'addedBit':0,
+          'ind':2,
+          'oind':0,
         },
         {
           'img':Constants.imagepath+"l.png",
           'itemTitle':"Lunch + snack",
           'desc':"Khichidi desc",
           'price':140,'color':"009951",
-          'i':0,
-          'j':2,
+          'addedBit':0,
+          'ind':3,
+          'oind':0,
 
         }
       ]
@@ -50,146 +54,166 @@ class _FoodItemsViewState extends State<FoodItemsView>{
 
     {
       'day':"Tuesday (11-12-2025)",
+      'oind':1,
       'data':[
         {
           'img':Constants.imagepath+"r&D.png",
           'itemTitle':"Roti & Dal",
           'desc':"Khichidi desc",
           'price':100,'color':"009951",
-          'i':1,
-          'j':0,
+          'addedBit':0,
+          'ind':4,
+          'oind':1,
         },
         {
           'img':Constants.imagepath+"fruit.png",
           'itemTitle':"fruit snack",
           'desc':"Khichidi desc",
           'price':50,'color':"009951",
-          'i':1,
-          'j':1,
+          'addedBit':0,
+          'ind':5,
+          'oind':1,
         },
         {
           'img':Constants.imagepath+"rice.png",
           'itemTitle':"Rice",
           'desc':"Khichidi desc",
           'price':140,'color':"009951",
-          'i':1,
-          'j':2,
+          'addedBit':0,
+          'ind':6,
+          'oind':1,
         }
       ]
     },
     {
       'day':"Wednesday (12-12-2025)",
+      'oind':2,
       'data':[
         {
           'img':Constants.imagepath+"rice.png",
           'itemTitle':"Healthy Lunch",
           'desc':"Khichidi desc",
           'price':100,'color':"009951",
-          'i':2,
-          'j':0,
+          'addedBit':0,
+          'ind':7,
+          'oind':2,
         },
         {
           'img':Constants.imagepath+"c.png",
           'itemTitle':"Evening snack",
           'desc':"Khichidi desc",
           'price':50,'color':"009951",
-          'i':2,
-          'j':1,
+          'addedBit':0,
+          'ind':8,
+          'oind':2,
         },
         {
           'img':Constants.imagepath+"l.png",
           'itemTitle':"Lunch + snack",
           'desc':"Khichidi desc",
           'price':140,'color':"009951",
-          'i':2,
-          'j':2,
+          'addedBit':0,
+          'ind':9,
+          'oind':2,
         }
       ]
     },
     {
       'day':"Thursday (13-12-2025)",
+      'oind':3,
       'data':[
         {
           'img':Constants.imagepath+"r&D.png",
           'itemTitle':"Roti & Dal",
           'desc':"Khichidi desc",
           'price':100,'color':"009951",
-          'i':3,
-          'j':0,
+          'addedBit':0,
+          'ind':10,
+          'oind':3,
         },
         {
           'img':Constants.imagepath+"fruit.png",
           'itemTitle':"fruit snack",
           'desc':"Khichidi desc",
           'price':50,'color':"009951",
-          'i':3,
-          'j':1,
+          'addedBit':0,
+          'ind':11,
+          'oind':3,
         },
         {
           'img':Constants.imagepath+"rice.png",
           'itemTitle':"Rice",
           'desc':"Khichidi desc",
           'price':140,'color':"009951",
-          'i':3,
-          'j':2,
+          'addedBit':0,
+          'ind':12,
+          'oind':3,
         }
       ]
     },
     {
       'day':"Firday (14-12-2025)",
+      'oind':4,
       'data':[
         {
           'img':Constants.imagepath+"r&D.png",
           'itemTitle':"Roti & Dal",
           'desc':"Khichidi desc",
           'price':100,'color':"009951",
-          'i':4,
-          'j':0,
+          'addedBit':0,
+          'ind':13,
+          'oind':4,
         },
         {
           'img':Constants.imagepath+"fruit.png",
           'itemTitle':"fruit snack",
           'desc':"Khichidi desc",
           'price':50,'color':"009951",
-          'i':4,
-          'j':1,
+          'addedBit':0,
+          'ind':14,
+          'oind':4,
         },
         {
           'img':Constants.imagepath+"rice.png",
           'itemTitle':"Rice",
           'desc':"Khichidi desc",
           'price':140,'color':"009951",
-          'i':4,
-          'j':2,
+          'addedBit':0,
+          'ind':15,
+          'oind':4,
         }
       ]
     },
     {
       'day':"Saturday (15-12-2025)",
+      'oind':5,
       'data':[
         {
           'img':Constants.imagepath+"r&D.png",
           'itemTitle':"Roti & Dal",
           'desc':"Khichidi desc",
           'price':100,'color':"009951",
-          'i':5,
-          'j':0,
+          'addedBit':0,
+          'ind':16,
+          'oind':5,
         },
         {
           'img':Constants.imagepath+"fruit.png",
           'itemTitle':"fruit snack",
           'desc':"Khichidi desc",
           'price':50,'color':"009951",
-          'i':5,
-          'j':1,
+          'addedBit':0,
+          'ind':17,
+          'oind':5,
         },
         {
           'img':Constants.imagepath+"rice.png",
           'itemTitle':"Rice",
           'desc':"Khichidi desc",
           'price':140,'color':"009951",
-          'i':5,
-          'j':2,
+          'addedBit':0,
+          'ind':18,
+          'oind':5,
         }
       ]
     }
@@ -197,10 +221,8 @@ class _FoodItemsViewState extends State<FoodItemsView>{
   late List<MenuList> items=json.map(
           (data)=>  MenuList.fromJson(data)
   ).toList();
-  static Color hexColor(String color){
-    return Color(int.parse(color,radix: 16)+0XFF000000);
-  }
-  final controller=Get.put(ItemsUpdate());
+  final controller=Get.put(ItemsController());
+  int sum=0;
   @override
   void initState(){
     super.initState();
@@ -235,7 +257,7 @@ class _FoodItemsViewState extends State<FoodItemsView>{
                               child: Icon(Icons.notification_important_outlined,color: Colors.white,),
                             ),
                             IconButton(onPressed: (){
-                              Get.to(()=>cartView());
+                              Get.to(()=>cartView(sum:sum));
                             },
                               icon:  Icon(Icons.add_shopping_cart_outlined,color: Colors.white,),
                             ) ,], )), ),
@@ -262,7 +284,8 @@ class _FoodItemsViewState extends State<FoodItemsView>{
         ),
         body:
         SingleChildScrollView(
-          child: Column(
+          child:
+          Column(
             children: [
               ListView.builder(
                 shrinkWrap: true,
@@ -295,7 +318,8 @@ class _FoodItemsViewState extends State<FoodItemsView>{
                         SizedBox(height: 3,),
                         SizedBox(
                           height:176,
-                          child: ListView.builder(
+                          child:
+                          ListView.builder(
                               scrollDirection: Axis.horizontal,
                               itemCount: data.length,
                               itemBuilder:(context,j){
@@ -343,14 +367,23 @@ class _FoodItemsViewState extends State<FoodItemsView>{
                                               padding: EdgeInsets.only(right: 5),
                                               child:GestureDetector(
                                                   onTap: (){
-                                                    if(!(controller.items.contains(data[j]))) {
-                                                      controller.addItems(data[j]);
-                                                      controller.countIncre();
-                                                      setState(() {
-                                                        controller.originalList[i].data[j].color="E6E9F3";
-                                                      });
+                                                    // if(!(controller.addedItems.contains(data[j]))) {
+                                                    //   // controller.addItems(data[j]);
+                                                    //   controller.countIncre();
+                                                    //   setState(() {
+                                                    //     controller.originalList[i].data[j].color="E6E9F3";
+                                                    //   });
+                                                    //
+                                                    //   controller.addedItems.refresh();
+                                                    // }
+                                                    if(data[j].addedBit!=1){
+                                                      data[j].addedBit=1;
 
-                                                      controller.items.refresh();
+                                                      controller.countIncre();
+                                                     setState(() {
+                                                       data[j].color="E6E9F3";
+                                                       sum+=data[j].price;
+                                                     });
                                                     }
                                                   },
                                                   child: Container(
@@ -358,7 +391,7 @@ class _FoodItemsViewState extends State<FoodItemsView>{
                                                     width: 35,
                                                     decoration: BoxDecoration(
                                                       borderRadius: BorderRadius.circular(5),
-                                                      color: hexColor(data[j].color),
+                                                      color:Constants.hexColor(data[j].color),
                                                     ),
                                                     child: Center(child: Text("Add",style: TextStyle(color: Colors.white,fontSize: 12,fontWeight: FontWeight.w500),)),
                                                   ),  ),   )

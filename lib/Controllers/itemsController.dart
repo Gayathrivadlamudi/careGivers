@@ -5,10 +5,10 @@ import 'package:get/get.dart';
 import '../models/menu_list.dart';
 import '../utils/constants.dart';
 
-class ItemsUpdate extends GetxController{
+class ItemsController extends GetxController{
   var cartCount=0.obs;
   var color="E6E9F3".obs;
-  var items=<Item>[].obs;
+  var addedItems=<Item>[].obs;
 
   late var originalList=<MenuList>[].obs;
   void countIncre(){
@@ -18,10 +18,10 @@ class ItemsUpdate extends GetxController{
     cartCount--;
   }
   void addItems(Item i){
-    items.add(i);
+    addedItems.add(i);
   }
   void removeItems(Item j){
-    items.remove(j);
+    addedItems.remove(j);
   }
 
 }
