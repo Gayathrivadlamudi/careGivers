@@ -122,7 +122,7 @@ class _cartViewState extends State<cartView> {
                                  int oind=addedItems[j].oind;
                                  List<Item> data=Controller.originalList[oind].data;
                                  //nt index = data.indexWhere((sublist) => sublist.contains(keyToFind));
-                                int index=data.indexWhere((item)=>item.contains(ind));
+                               // int index=data.indexWhere((item)=>item.contains(ind));
                                });
 
                              },

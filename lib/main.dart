@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:untitled/utils/init_routes.dart';
+import 'package:untitled/views/currency_convertor.dart';
 import 'package:untitled/views/foodItem_view.dart';
 
 void main() {
@@ -46,7 +47,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           child: GestureDetector(
             onTap: (){
-              Get.toNamed(FoodItemsView.routeName);
+              // Get.toNamed(FoodItemsView.routeName);
+              Get.toNamed(CurrencyConvertor.routeName);
             },
             child: Center(child:Text("FoodSection",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w600),),)
           ),
